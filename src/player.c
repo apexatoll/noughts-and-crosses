@@ -23,7 +23,7 @@ static bool player_won_vertically(Player *self, Board *board) {
   for(int column = 0; column < 3; column++) {
     if(board->state[0][column] != self->token) continue;
     if(board->state[1][column] != self->token) continue;
-    if(board->state[1][column] == self->token) return true;
+    if(board->state[2][column] == self->token) return true;
   }
 
   return false;
