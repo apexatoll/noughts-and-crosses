@@ -12,4 +12,6 @@ typedef struct {
 
 Game *new_game();
 
+void play_game(Game *self);
+
 #endif
