@@ -4,7 +4,6 @@
 
 static bool game_complete(Game *self);
 static void game_player_turn(Game *self);
-static void game_computer_turn(Game *self);
 
 Game *new_game() {
   Game *game = (Game*) malloc(sizeof(Game));
