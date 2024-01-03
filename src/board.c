@@ -38,13 +38,17 @@ void set_board_state(Board *self, int row, int column, Token token) {
 bool board_complete(Board *self) {
   for(int row = 0; row < 3; row++) {
     for(int column = 0; column < 3; column++) {
-      if(self->state[row][column] == EMPTY) {
+      if(board_space_free(self, row, column)) {
         return false;
       }
     }
   }
 
   return true;
+}
+
+bool board_space_free(Board *self, int row, int column) {
+  return self->state[row][column] == EMPTY;
 }
 
 static void print_board_row(Board *self, int row) {

@@ -18,4 +18,6 @@ void set_board_state(Board *self, int row, int column, Token token);
 
 bool board_complete(Board *self);
 
+bool board_space_free(Board *self, int row, int column);
+
 #endif
