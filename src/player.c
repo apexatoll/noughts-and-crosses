@@ -33,7 +33,7 @@ static bool player_won_horizontally(Player *self, Board *board) {
   for(int row = 0; row < 3; row++) {
     if(board->state[row][0] != self->token) continue;
     if(board->state[row][1] != self->token) continue;
-    if(board->state[row][1] == self->token) return true;
+    if(board->state[row][2] == self->token) return true;
   }
 
   return false;
