@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <unistd.h>
 #include "game.h"
 
 static bool game_complete(Game *self);
@@ -62,6 +63,7 @@ static void game_computer_turn(Game *self) {
   if(!board_space_free(self->board, row, column)) {
     game_computer_turn(self);
   } else {
+    sleep(1);
     set_board_state(self->board, row, column, self->computer->token);
   }
 }
