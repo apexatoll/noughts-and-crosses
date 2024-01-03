@@ -3,4 +3,6 @@
 
 typedef enum { EMPTY, NOUGHT, CROSS } Token;
 
+char token_to_char(Token token);
+
 #endif
