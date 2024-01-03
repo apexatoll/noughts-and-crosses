@@ -14,6 +14,8 @@ void print_board(Board *self);
 
 void reset_board(Board *self);
 
+void set_board_state(Board *self, int row, int column, Token token);
+
 bool board_complete(Board *self);
 
 #endif

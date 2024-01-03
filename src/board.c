@@ -26,9 +26,13 @@ void print_board(Board *self) {
 void reset_board(Board *self) {
   for(int row = 0; row < 3; row++) {
     for(int column = 0; column < 3; column++) {
-      self->state[row][column] = EMPTY;
+      set_board_state(self, row, column, EMPTY);
     }
   }
+}
+
+void set_board_state(Board *self, int row, int column, Token token) {
+  self->state[row][column] = token;
 }
 
 bool board_complete(Board *self) {
