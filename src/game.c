@@ -46,11 +46,14 @@ static bool game_complete(Game *self) {
 static void game_player_turn(Game *self) {
   int row, column;
 
-  printf("Enter row [0-2]:\n> ");
+  printf("Enter row [1-3]:\n> ");
   scanf("%d", &row);
 
-  printf("Enter column [0-2]:\n> ");
+  printf("Enter column [1-3]:\n> ");
   scanf("%d", &column);
+
+  row--;
+  column--;
 
   if(!board_space_free(self->board, row, column)) {
     printf("That space is already taken!\n\n");
