@@ -7,6 +7,7 @@
 static bool game_complete(Game *self);
 static void game_player_turn(Game *self);
 static void game_computer_turn(Game *self);
+static void print_game_result(Game *self);
 static int random_selection();
 
 Game *new_game() {
@@ -35,6 +36,8 @@ void play_game(Game *self) {
       print_board(self->board);
     }
   }
+
+  print_game_result(self);
 }
 
 static bool game_complete(Game *self) {
@@ -77,4 +80,14 @@ static void game_computer_turn(Game *self) {
 
 static int random_selection() {
   return rand() % 3;
+}
+
+static void print_game_result(Game *self) {
+  if(player_won(self->player, self->board)) {
+    printf("Player wins!\n");
+  } else if(player_won(self->computer, self->board)) {
+    printf("Computer wins!\n");
+  } else {
+    printf("It's a draw!\n");
+  }
 }
