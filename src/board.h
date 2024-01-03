@@ -9,6 +9,8 @@ typedef struct {
 
 Board *new_board();
 
+void print_board(Board *self);
+
 void reset_board(Board *self);
 
 #endif
