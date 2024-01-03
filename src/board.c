@@ -31,6 +31,18 @@ void reset_board(Board *self) {
   }
 }
 
+bool board_complete(Board *self) {
+  for(int row = 0; row < 3; row++) {
+    for(int column = 0; column < 3; column++) {
+      if(self->state[row][column] == EMPTY) {
+        return false;
+      }
+    }
+  }
+
+  return true;
+}
+
 static void print_board_row(Board *self, int row) {
   printf(
     " %c | %c | %c ",
