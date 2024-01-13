@@ -53,7 +53,7 @@ bool board_space_free(Board *self, int row, int column) {
 
 static void print_board_row(Board *self, int row) {
   printf(
-    " %c | %c | %c ",
+    " %c │ %c │ %c ",
     token_to_char(self->state[row][0]),
     token_to_char(self->state[row][1]),
     token_to_char(self->state[row][2])
@@ -61,5 +61,5 @@ static void print_board_row(Board *self, int row) {
 }
 
 static void print_separator() {
-  printf("\n---|---|---\n");
+  printf("\n───┼───┼───\n");
 }
